@@ -525,6 +525,47 @@ textarea {
 .about-text > p {
     color: var(--light-text);
     margin-bottom: 15px;
+    min-height: 1.7em;
+}
+
+.typing-cursor::after {
+    content: "|";
+    display: inline-block;
+    margin-left: 2px;
+    color: var(--main);
+    animation: blink 0.8s steps(1) infinite;
+}
+
+@keyframes blink {
+
+    50% {
+        opacity: 0;
+    }
+
+}
+
+.about-info div {
+    opacity: 0;
+    transform: translateY(20px);
+
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.about-info.in-view div {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.about-info.in-view div:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.about-info.in-view div:nth-child(2) {
+    transition-delay: 0.35s;
+}
+
+.about-info.in-view div:nth-child(3) {
+    transition-delay: 0.6s;
 }
 
 .about-info {
@@ -610,6 +651,26 @@ textarea {
     background: var(--main);
 
     border-radius: 50%;
+
+    box-shadow: 0 0 0 0 rgba(167, 122, 165, .6);
+
+    animation: dotGlow 2s ease-in-out infinite;
+}
+
+@keyframes dotGlow {
+
+    0% {
+        box-shadow: 0 0 0 0 rgba(167, 122, 165, .6);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(167, 122, 165, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(167, 122, 165, 0);
+    }
+
 }
 
 .date {
@@ -710,10 +771,13 @@ textarea {
 .skill-bar span {
     display: block;
     height: 100%;
+    width: 0;
 
     background: var(--main);
 
     border-radius: 10px;
+
+    transition: width 1.2s ease;
 }
 
 
@@ -742,7 +806,27 @@ textarea {
     display: flex;
     gap: 20px;
 
-    transition: .3s;
+    transition: transform .3s, opacity .6s ease;
+
+    opacity: 0;
+    transform: translateY(25px);
+}
+
+.experience-container.in-view .experience-card {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.experience-container.in-view .experience-card:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.experience-container.in-view .experience-card:nth-child(2) {
+    transition-delay: 0.3s;
+}
+
+.experience-container.in-view .experience-card:nth-child(3) {
+    transition-delay: 0.5s;
 }
 
 .experience-card:hover {
@@ -814,7 +898,31 @@ textarea {
 
     border-radius: 20px;
 
-    transition: .3s;
+    transition: transform .3s, border-color .3s, opacity .6s ease, transform .6s ease;
+
+    opacity: 0;
+    transform: translateY(25px);
+}
+
+.services-container.in-view .service-card {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.services-container.in-view .service-card:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.services-container.in-view .service-card:nth-child(2) {
+    transition-delay: 0.25s;
+}
+
+.services-container.in-view .service-card:nth-child(3) {
+    transition-delay: 0.4s;
+}
+
+.services-container.in-view .service-card:nth-child(4) {
+    transition-delay: 0.55s;
 }
 
 .service-card:hover {
@@ -1015,6 +1123,28 @@ textarea {
     border: 1px solid var(--border);
 
     border-radius: 18px;
+
+    opacity: 0;
+    transform: translateY(25px);
+
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.certificates-container.in-view .certificate-card {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.certificates-container.in-view .certificate-card:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.certificates-container.in-view .certificate-card:nth-child(2) {
+    transition-delay: 0.3s;
+}
+
+.certificates-container.in-view .certificate-card:nth-child(3) {
+    transition-delay: 0.5s;
 }
 
 .certificate-icon {
