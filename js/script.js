@@ -394,7 +394,7 @@ staggerContainers.forEach(container => {
 // =========================
 
 const revealElements = document.querySelectorAll(
-    ".section-title, .about-container, .resume-container, .skills-container, .experience-container, .services-container, .portfolio-container, .certificates-container, .contact-container"
+    ".section-title, .about-container, .skills-container, .experience-container, .services-container, .portfolio-container, .certificates-container, .contact-container"
 );
 
 const observer = new IntersectionObserver(
